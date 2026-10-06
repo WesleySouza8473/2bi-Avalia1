@@ -5,21 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Desenho Assinado</title>
   <link rel="stylesheet" href="style.css">
+  <meta name="google-client-id" content="SEU_CLIENT_ID.apps.googleusercontent.com">
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 <body>
   <main>
     <header>
       <h1>Desenho Assinado</h1>
-      <p>Escolha um número entre 1 e 100. Cada número gera uma figura diferente, assinada com o seu e-mail.</p>
+      <p>Entre com sua conta Google e escolha um número entre 1 e 100. O servidor verifica sua identidade e assina o desenho.</p>
     </header>
+
+    <section class="login" aria-labelledby="login-titulo">
+      <h2 id="login-titulo">Sua conta Google</h2>
+      <div id="google-login"></div>
+      <p id="sessao" aria-live="polite">Entre com o Google para gerar seu desenho.</p>
+    </section>
 
     <form id="formulario" novalidate>
       <label for="numero">Número</label>
       <input id="numero" name="numero" type="number" min="1" max="100" step="1" required placeholder="42">
-
-      <label for="email">E-mail</label>
-      <input id="email" name="email" type="email" required placeholder="voce@gmail.com">
-
       <button type="submit">Desenhar</button>
     </form>
 
