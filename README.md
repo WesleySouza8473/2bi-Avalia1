@@ -21,12 +21,12 @@ evidencias/
 
 ## Configuração e publicação no Cloudflare Pages
 
-1. Crie um OAuth Client do tipo Web application no Google Cloud Console.
-2. Cadastre a URL pública do site em **Authorized JavaScript origins**.
-3. Substitua `SEU_CLIENT_ID.apps.googleusercontent.com` no metadado `google-client-id` de `public/index.html` pelo Client ID criado. O Client ID é público.
+1. O projeto Google Cloud `Desenho Assinado 2025104728` tem um OAuth Client do tipo Web application.
+2. A origem `https://2bi-avalia1.pages.dev` está cadastrada em **Authorized JavaScript origins**.
+3. O Client ID público fica no metadado `google-client-id` de `public/index.html`. A conta Google do estudante está cadastrada como test user; enquanto o app estiver em modo de teste, somente usuários cadastrados podem entrar.
 4. No painel do projeto Cloudflare Pages, configure a variável de ambiente `GOOGLE_CLIENT_ID` com o mesmo Client ID. Não publique tokens, senhas ou arquivos `.env`.
-5. Conecte o repositório ao Cloudflare Pages com Framework preset `None`, Build command vazio e Build output directory `public`.
-6. Publique e confira o site em sua URL `*.pages.dev`; faça login com Google e gere o desenho.
+5. O repositório é implantado pelo Cloudflare Pages com Framework preset `None`, Build command vazio e Build output directory `public`.
+6. Acesse `https://2bi-avalia1.pages.dev`, entre com a conta Google cadastrada e gere o desenho.
 
 A API `POST /api/desenho` recebe `{"numero": 42}` e o cabeçalho `Authorization: Bearer <id_token>`. Retorna SVG com status 200, erro de entrada com 400, falha de autenticação com 401 e método não permitido com 405.
 
@@ -34,4 +34,4 @@ A API `POST /api/desenho` recebe `{"numero": 42}` e o cabeçalho `Authorization:
 
 Nome: Wesley dos Santos de Souza
 RA: 2025104728
-URL: https://
+URL: https://2bi-avalia1.pages.dev
